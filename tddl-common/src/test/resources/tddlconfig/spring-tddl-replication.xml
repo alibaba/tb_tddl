@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- logicTableName2TDDLContext -->
+	<bean id="root" class="java.util.HashMap">
+		<!-- 描述每个表怎样进行复制：从主库复制哪些列，到哪个库的哪个表中。 -->
+		<constructor-arg>
+			<map>
+				<entry key="auction_auctions" value-ref="auction_auctions_ReplicationContext" />
+				<entry key="auction_image" value-ref="auction_image_ReplicationContext" />
+				<entry key="sku" value-ref="sku_ReplicationContext" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<!-- sku表  -->
+	<bean id="sku_ReplicationContext" class="com.taobao.tddl.common.sync.BizTDDLContext">
+		<!-- <property name="masterJdbcTemplate" ref="item_master_replication_jdbcTemplate" /> 默认为主库 -->
+		<!-- 每一个从库的数据复制的配置 -->
+		<property name="slaveInfos">
+			<list>
+				<!-- 分表的配置 -->
+				<bean class="com.taobao.tddl.common.sync.SlaveInfo">
+					<!-- <property name="name" value="sku" /> --><!-- 分库的表名,默认为logicTableName2TDDLContext的key，默认主库读库相同 -->
+					<!-- <property name="jdbcTemplate" ref="item_slave_replication_jdbcTemplate" /> --><!-- 分库数据复制的Jdbctemplate,可以根据需要，决定是否挂tddl的ds, 默认为slave库  -->
+					<!-- <property name="type" value="oracle" /> 默认为slave库 -->
+					<property name="databaseShardColumn" value="seller_id" /><!-- 会被拼装到where条件后，以帮助目标数据源进行分库或分表操作 -->
+					<property name="autoInsert" value="true" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<!-- auction_image表  -->
+	<bean id="auction_image_ReplicationContext" class="com.taobao.tddl.common.sync.BizTDDLContext">
+		<property name="slaveInfos">
+			<list>
+				<bean class="com.taobao.tddl.common.sync.SlaveInfo">
+					<property name="databaseShardColumn" value="user_num_id" />
+					<property name="autoInsert" value="true" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<bean id="auction_auctions_ReplicationContext" class="com.taobao.tddl.common.sync.BizTDDLContext">
+		<!-- 每一个从库的数据复制的配置 -->
+		<property name="slaveInfos">
+			<list>
+				<!-- auction_auctions主表的复制配置 -->
+				<bean class="com.taobao.tddl.common.sync.SlaveInfo">
+					<property name="autoInsert" value="true" />
+					<property name="databaseShardColumn" value="user_id" />
+				</bean>
+
+				<!-- item 数字 id 映射-->
+				<bean id="auction_id_route_sync" class="com.taobao.tddl.common.sync.SlaveInfo">
+					<property name="name" value="auction_id_route" /><!--数据复制目标表的表名-->
+					<property name="databaseShardColumn" value="auction_id" />
+					<property name="disableUpdate" value="true" />
+					<property name="noSyncVersion" value="true" />
+					<property name="autoInsert" value="true" />
+					<!--需要被复制的列名字段,如主库有a,b,c,d,e 5个字段，但a,c,e需要复制，那么a,c,e写在下面即可-->
+					<property name="columns">
+						<list>
+							<value>auction_id</value>
+							<value>user_id</value>
+						</list>
+					</property>
+				</bean>
+				<!-- item 字符 id 映射-->
+				<bean id="auction_strid_route_sync" class="com.taobao.tddl.common.sync.SlaveInfo">
+					<property name="name" value="auction_strid_route" /><!--数据复制目标表的表名-->
+					<property name="databaseShardColumn" value="id" />
+					<property name="disableUpdate" value="true" />
+					<property name="noSyncVersion" value="true" />
+					<property name="autoInsert" value="true" />
+					<property name="columns">
+						<list>
+							<value>id</value>
+							<value>auction_id</value>
+							<value>user_id</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+</beans>

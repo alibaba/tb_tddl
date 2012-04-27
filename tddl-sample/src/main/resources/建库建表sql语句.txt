@@ -1,0 +1,30 @@
+/*建库qatest_normal_0*/
+drop database if exists qatest_normal_0;
+CREATE DATABASE `qatest_normal_0` /*!40100 DEFAULT CHARACTER SET gbk */;
+
+
+/*在库qatest_normal_0中建表normaltbl_0001*/
+USE qatest_normal_0;
+CREATE TABLE `normaltbl_0001` (
+  `pk` int(11) NOT NULL,
+  `id` int(11) DEFAULT NULL,
+  `gmt_create` date DEFAULT '2010-12-17',
+  `name` varchar(30) DEFAULT NULL,
+  `floatCol` float(9,3) DEFAULT '0.000',
+  PRIMARY KEY (`pk`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*建库qatest_normal_0_bac*/
+drop database if exists qatest_normal_0_bac;
+CREATE DATABASE `qatest_normal_0_bac` /*!40100 DEFAULT CHARACTER SET gbk */;
+
+/*在库qatest_normal_0_bac中建表normaltbl_0001*/
+USE qatest_normal_0_bac;
+CREATE TABLE `normaltbl_0001` (
+  `pk` int(11) NOT NULL,
+  `id` int(11) DEFAULT NULL,
+  `gmt_create` date DEFAULT '2010-12-17',
+  `name` varchar(30) DEFAULT NULL,
+  `floatCol` float(9,3) DEFAULT '0.000',
+  PRIMARY KEY (`pk`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

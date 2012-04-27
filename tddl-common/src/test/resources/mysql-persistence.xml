@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="DBCOMM" class="org.apache.commons.dbcp.BasicDataSource"
+		init-method="createDataSource" destroy-method="close">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://192.168.205.61:3306/coll_general?characterEncoding=utf8</value>
+		</property>
+		<property name="username">
+			<value>coll</value>
+		</property>
+		<property name="password">
+			<value>coll</value>
+		</property>
+		<property name="maxActive" value="100"></property>
+		<property name="initialSize" value="1"></property>
+		<property name="maxIdle" value="-1"></property>
+		<property name="minIdle" value="-1"></property>
+		<property name="maxWait" value="1500"></property>
+	</bean>	
+
+	<bean id="generatorFactory" class="com.taobao.tddl.common.sequence.routed.GeneratorFactoryImpl">
+		<constructor-arg value="/generators.xml" />
+		<constructor-arg ref="sequenceDAO" />
+	</bean>
+	
+	<bean id="routedSequenceIdGenerator" factory-bean="generatorFactory" factory-method="create">
+   		<constructor-arg>
+    		<value>gid</value>
+   		</constructor-arg>
+	</bean>
+	
+	<bean id="sequenceDAO" class="com.taobao.tddl.common.sequence.DataSourceSequenceIdDAO">
+		<property name="dataSource">
+		<ref bean="DBCOMM"/>
+		</property>
+		<property name="tableName">
+		<value>sequence</value>
+		</property>
+		<property name="selfAddColumnName"> 
+		<value>ids</value>
+		</property>
+		<property name="typeColumnName"> 
+		<value>typename</value>
+		</property>
+		<property name="gmt_modifiedTimeColumnName"> 
+		<value>gmt_modified</value>
+		</property>
+	</bean> 
+</beans>

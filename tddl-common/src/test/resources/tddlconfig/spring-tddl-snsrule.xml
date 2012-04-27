@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="root" class="com.taobao.tddl.common.config.beans.AppRule">
+		<property name="oneRule" ref="oneRule" />
+	</bean>
+
+	<!-- ============================================================================ -->
+	<!-- == 只有一个库，一个dbindex对应到一个数据库组包含读写库的分库方法  == -->
+	<!-- ============================================================================ -->
+	<bean id="oneRule" class="com.taobao.tddl.common.config.beans.ShardRule">
+		<property name="dbtype" value="ORACLE" />
+		<property name="tableRules">
+			<map>
+				<entry key="AUCTION_IMAGE" value-ref="master_auction_image" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="master_tableRule" abstract="true" init-method="init" class="com.taobao.tddl.common.config.beans.TableRule">
+		<property name="dbIndexes" value="master_datasource_1,master_datasource_2" />
+		<property name="dbRuleArray">
+			<list><!-- 本身含有逗号只能用list方式指定，不能再用逗号分隔方式  -->
+				<value>({0}.longValue() + 1)% 2</value>
+				<value>Integer.valueOf(#userIdStr#.substring(0,1),16).intdiv(8)</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="master_auction_image" parent="master_tableRule">
+		<property name="ruleParames" value="#ITEM_ID#"/>
+		<property name="uniqueKeys" value="ID"/>
+	</bean>
+</beans>

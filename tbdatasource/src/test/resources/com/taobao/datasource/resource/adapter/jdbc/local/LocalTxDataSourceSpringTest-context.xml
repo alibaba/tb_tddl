@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="dataSource" class="com.taobao.datasource.resource.adapter.jdbc.local.LocalTxDataSource" init-method="init">
+        <property name="cachedConnectionManager" ref="cachedConnectionManager" />
+        <property name="transactionManager" ref="transactionManager" />
+
+        <property name="connectionURL" value="jdbc:oracle:thin:@db.dev.crm.taobao.net:1521:newcrm" />
+        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="securityDomain" ref="securityDomain" />
+        <property name="exceptionSorterClassName" value="com.taobao.datasource.resource.adapter.jdbc.vendor.OracleExceptionSorter" />
+        <property name="preparedStatementCacheSize" value="75" />
+        <property name="validateOnMatch" value="true" />
+        <property name="connectionProperties">
+            <map>
+                <entry key="SetBigStringTryClob" value="true" />
+                <entry key="defaultRowPrefetch" value="50" />
+            </map>
+        </property>
+
+        <property name="minSize" value="2" />
+        <property name="maxSize" value="10" />
+        <property name="blockingTimeoutMillis" value="30000" />
+        <property name="idleTimeoutMinutes" value="15" />
+        <property name="backgroundValidation" value="false" />
+        <property name="prefill" value="false" />
+        <property name="useFastFail" value="false" />
+    </bean>
+
+    <bean id="cachedConnectionManager" class="com.taobao.datasource.resource.connectionmanager.CachedConnectionManager" init-method="init">
+        <property name="transactionManager" ref="transactionManager" />
+    </bean>
+
+    <bean id="transactionManager" class="com.taobao.datasource.tm.JBossTransactionManager">
+    </bean>
+
+    <bean id="securityDomain" class="com.taobao.datasource.resource.security.SecureIdentityLoginModule">
+        <property name="userName" value="water" />
+        <property name="password" value="5c580944c5333da4" />
+    </bean>
+
+</beans>

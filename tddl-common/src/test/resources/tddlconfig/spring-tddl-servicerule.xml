@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="root" class="com.taobao.tddl.common.config.beans.AppRule">
+		<property name="masterRule" ref="masterRule" />
+		<property name="slaveRule" ref="slaveRule" />
+	</bean>
+
+	<!-- ============================================================================ -->
+	<!-- == 主库分库规则 == -->
+	<!-- ============================================================================ -->
+	<bean id="masterRule" class="com.taobao.tddl.common.config.beans.ShardRule">
+		<property name="dbtype" value="ORACLE" />
+		<property name="tableRules">
+			<map>
+				<entry key="AUCTION_AUCTIONS" value-ref="master_auction_auctions" />
+				<entry key="SKU" value-ref="master_sku" />
+				<entry key="AUCTION_IMAGE" value-ref="master_auction_image" />
+			</map>
+		</property>
+	</bean>
+	<bean id="master_tableRule" abstract="true" class="com.taobao.tddl.common.config.beans.TableRule">
+		<property name="dbIndexes" value="master_datasource_1,master_datasource_2" />
+		<property name="dbRuleArray">
+			<list><!-- 本身含有逗号只能用list方式指定，不能再用逗号分隔方式  -->
+				<value>({0}.longValue() + 1)% 2</value>
+				<value>Integer.valueOf(#userIdStr#.substring(0,1),16).intdiv(8)</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="master_auction_auctions" parent="master_tableRule">
+		<property name="ruleParames" value="#AUCTION_ID#"/>
+		<property name="uniqueKeys" value="auction_id"/>
+	</bean>
+	<bean id="master_auction_image" parent="master_tableRule">
+		<property name="ruleParames" value="#ITEM_ID#"/>
+		<property name="uniqueKeys" value="ID"/>
+	</bean>
+	<bean id="master_sku" parent="master_tableRule">
+		<property name="ruleParames" value="#ITEM_ID#"/>
+		<property name="uniqueKeys" value="sku_id"/>
+	</bean>
+
+	<!-- ============================================================================ -->
+	<!-- == 读库分库规则 == -->
+	<!-- ============================================================================ -->
+	<bean id="slaveRule" class="com.taobao.tddl.common.config.beans.ShardRule">
+		<property name="dbtype" value="ORACLE" />
+		<property name="tableRules">
+			<map>
+				<entry key="AUCTION_AUCTIONS" value-ref="slave_auction_auctions" />
+				<entry key="SKU" value-ref="slave_sku" />
+				<entry key="AUCTION_IMAGE" value-ref="slave_auction_image" />
+				<entry key="AUCTION_ID_ROUTE" value-ref="auction_id_route" />
+				<entry key="AUCTION_STRID_ROUTE" value-ref="auction_strid_route" />
+			</map>
+		</property>
+	</bean>
+	<bean id="slave_tableRule" abstract="true" class="com.taobao.tddl.common.config.beans.TableRule">
+		<property name="dbIndexes" value="slave_0,slave_1,slave_2,slave_3,slave_4,slave_5,slave_6,slave_7,slave_8,slave_9,slave_10,slave_11,slave_12,slave_13,slave_14,slave_15" />
+		<property name="dbRules" value="({0} % 64).intdiv(4)"/>
+		<property name="tbRules" value="({0} % 64)% 4"/>
+		<property name="tbSuffix" value="throughAllDB:[_0000-_0063]"/>
+	</bean>
+	<bean id="slave_auction_auctions" parent="slave_tableRule">
+		<property name="ruleParames" value="#user_id#.longValue()"/>
+	</bean>
+	<bean id="slave_sku" parent="slave_tableRule">
+		<property name="ruleParames" value="#seller_id#.longValue()"/>
+	</bean>
+	<bean id="slave_auction_image" parent="slave_tableRule">
+		<property name="ruleParames" value="#user_num_id#.longValue()"/>
+	</bean>
+	<bean id="auction_id_route" parent="slave_tableRule">
+		<property name="ruleParames" value="#auction_id#.longValue()"/>
+	</bean>
+	<bean id="auction_strid_route" parent="slave_tableRule">
+		<property name="ruleParameArray">
+			<list><!-- 含有逗号只能用list方式指定 -->
+				<value>Integer.valueOf(#ID#.substring(0,2),16)</value>
+			</list>
+		</property>
+	</bean>
+</beans>

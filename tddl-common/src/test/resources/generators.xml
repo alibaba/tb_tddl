@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generators PUBLIC "-//arch.taobao.com//tddl generators config DTD//ZH" "http://arch.taobao.com/tddl/generators.dtd">
+
+<generators>
+	<generator id='gid1' type='long2date'>
+		<route size='12' position='left'>
+			<table>
+				<monthofyear/>
+			</table>
+		</route>
+	</generator>
+	
+	<generator id='gid2'>
+		<route position='right'>
+			<database size='3'>
+				<mod>1000</mod>
+			</database>
+			<table size='4'>
+				<dayofyear />
+			</table>
+		</route>
+	</generator>
+</generators>

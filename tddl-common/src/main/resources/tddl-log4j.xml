@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE log4j:configuration SYSTEM "http://toolkit.alibaba-inc.com/dtd/log4j/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="TDDL_Appender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="tddl.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="GBK" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p [%c{10}] - %m%n" />
+		</layout>
+	</appender>
+	<appender name="TDDL_SQL_Appender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="tddl.sql.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="GBK" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p [%c{10}] - %m%n" />
+		</layout>
+	</appender>
+	<appender name="TDDL_Nagios_Appender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="Nagios.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="GBK" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+	<appender name="TDDL_Statistic_Appender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="tddl-statistic.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="GBK" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m,%d{yyy-MM-dd HH:mm:ss:SSS}%n" />
+		</layout>
+	</appender>
+	<logger name="TDDL_Statistic_LOG" additivity="false">
+		<level value="info" />
+		<appender-ref ref="TDDL_Statistic_Appender" />
+	</logger>
+	<logger name="TDDL_Nagios_LOG" additivity="false">
+		<level value="info" />
+		<appender-ref ref="TDDL_Nagios_Appender" />
+	</logger>
+	<logger name="TDDL_MD5_TO_SQL_MAPPING" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="TDDL_SQL_Appender" />
+	</logger>
+	<logger name="TDDL_SQL_LOG" additivity="false">
+		<level value="warn" />
+		<appender-ref ref="TDDL_SQL_Appender" />
+	</logger>
+	<logger name="TDDL_LOG" additivity="false">
+		<level value="warn" />
+		<appender-ref ref="TDDL_Appender" />
+	</logger>
+
+
+	<logger name="only_for_get_all_appender" additivity="false">
+		<level value="fatal" />
+		<appender-ref ref="TDDL_Appender" />
+		<appender-ref ref="TDDL_SQL_Appender" />
+		<appender-ref ref="TDDL_Nagios_Appender" />
+		<appender-ref ref="TDDL_Statistic_Appender" />
+	</logger>
+	<root>
+		<appender-ref ref="TDDL_Appender" />
+	</root>
+</log4j:configuration>

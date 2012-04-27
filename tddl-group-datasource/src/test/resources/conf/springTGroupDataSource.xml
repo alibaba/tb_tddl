@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- 三个独立的DBCP数据源 -->
+	<bean id="db1" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://127.0.0.1:3306/group_test_1</value>
+		</property>
+		<property name="username">
+			<value>tddl</value>
+		</property>
+		<property name="password">
+			<value>tddl</value>
+		</property>
+	</bean>
+	<bean id="db2" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://127.0.0.1:3306/group_test_2</value>
+		</property>
+		<property name="username">
+			<value>tddl</value>
+		</property>
+		<property name="password">
+			<value>tddl</value>
+		</property>
+	</bean>
+	<bean id="db3" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://127.0.0.1:3306/group_test_3</value>
+		</property>
+		<property name="username">
+			<value>tddl</value>
+		</property>
+		<property name="password">
+			<value>tddl</value>
+		</property>
+	</bean>
+
+	<!-- 应用使用的SpringTGroupDataSource数据源 -->
+	<bean id="ds" class="com.taobao.tddl.jdbc.group.SpringTGroupDataSource" init-method="init">
+		<property name="dataSources" value="db1:r10w, db2:r20, db3:r30" />
+		<property name="type" value="mysql"/>
+	</bean>
+</beans>

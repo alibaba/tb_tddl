@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generators PUBLIC "-//arch.taobao.com//tddl generators config DTD//ZH" "http://arch.taobao.com/tddl/generators.dtd">
+
+<generators>
+	<generator id='gid1' type='long2date'>
+		<route size='12' position='left'>
+			<table>
+				<monthofyear/>
+			</table>
+		</route>
+	</generator>
+	<generator id='gid2' type='long2date'>
+		<route size='12' position='left'>
+			<table>
+				<dayofweek/>
+			</table>
+		</route>
+	</generator>
+		<generator id='ctu' type='long2date'>
+		<route size='12' position='left'>
+			<table>
+				<dayofweek/>
+			</table>
+		</route>
+	</generator>
+</generators>

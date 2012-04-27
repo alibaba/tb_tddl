@@ -1,0 +1,28 @@
+<!ELEMENT generators (generator*)>
+<!ELEMENT generator (route?)>
+<!ATTLIST generator
+	id ID #IMPLIED
+	type (default|long2date) 'default'
+>
+<!ELEMENT route (database?, table?)>
+<!ATTLIST route
+	position (left|right) 'right'
+	overflowcheck (on|off) 'on'
+	size CDATA '0'
+>
+<!ELEMENT database (#PCDATA|mod|dayofyear|dayofmonth|dayofweek|monthofyear|dayofweek-sun-is-7|monthofyear-january-is-1)*>
+<!ATTLIST database
+	size CDATA '0'
+>
+<!ELEMENT table (#PCDATA|mod|dayofyear|dayofmonth|dayofweek|monthofyear|dayofweek-sun-is-7|monthofyear-january-is-1)*>
+<!ATTLIST table
+	size CDATA '0'
+>
+<!ELEMENT mod (#PCDATA)>
+<!ELEMENT dayofyear EMPTY>
+<!ELEMENT dayofmonth EMPTY>
+<!ELEMENT dayofweek EMPTY>
+<!ELEMENT monthofyear EMPTY>
+<!ELEMENT dayofweek-sun-is-7 EMPTY>
+<!ELEMENT monthofyear-january-is-1 EMPTY>
+

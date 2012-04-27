@@ -1,0 +1,226 @@
+AllRead:
+
+BoundedConcurrentHashMap:
+entities: 1, concurrent: 10; time: 10184, readCount: 93036435, ms/per read: 1.0946249176465113E-4
+entities: 10, concurrent: 1; time: 10001, readCount: 93485124, ms/per read: 1.069795874689111E-4
+entities: 3, concurrent: 3; time: 10027, readCount: 94485483, ms/per read: 1.0612212248520759E-4
+entities: 1, concurrent: 50; time: 10024, readCount: 94521854, ms/per read: 1.0604954913389659E-4
+entities: 50, concurrent: 1; time: 10004, readCount: 97519791, ms/per read: 1.025843051693989E-4
+entities: 5, concurrent: 10; time: 10096, readCount: 95136347, ms/per read: 1.0612137546126299E-4
+entities: 10, concurrent: 5; time: 10107, readCount: 94278160, ms/per read: 1.0720404386339318E-4
+entities: 1, concurrent: 100; time: 10006, readCount: 91497682, ms/per read: 1.0935796165852595E-4
+entities: 100, concurrent: 1; time: 10090, readCount: 99941016, ms/per read: 1.0095954998096076E-4
+entities: 5, concurrent: 20; time: 10028, readCount: 93747851, ms/per read: 1.069677853202203E-4
+entities: 20, concurrent: 5; time: 10153, readCount: 98793531, ms/per read: 1.0276988682588943E-4
+entities: 9, concurrent: 9; time: 10158, readCount: 95282043, ms/per read: 1.066098047456854E-4
+
+ConcurrentHashMap:
+entities: 1, concurrent: 10; time: 10111, readCount: 199450899, ms/per read: 5.069418087358844E-5
+entities: 10, concurrent: 1; time: 10143, readCount: 195075390, ms/per read: 5.1995282439266175E-5
+entities: 3, concurrent: 3; time: 10058, readCount: 196784761, ms/per read: 5.111168135626112E-5
+entities: 1, concurrent: 50; time: 10002, readCount: 201571450, ms/per read: 4.962012229410465E-5
+entities: 50, concurrent: 1; time: 10086, readCount: 194712621, ms/per read: 5.179941571430031E-5
+entities: 5, concurrent: 10; time: 10003, readCount: 192162190, ms/per read: 5.205498542663362E-5
+entities: 10, concurrent: 5; time: 10003, readCount: 193178978, ms/per read: 5.178099658442131E-5
+entities: 1, concurrent: 100; time: 10390, readCount: 203214912, ms/per read: 5.112813768312436E-5
+entities: 100, concurrent: 1; time: 10514, readCount: 219196487, ms/per read: 4.796609719388432E-5
+entities: 5, concurrent: 20; time: 10005, readCount: 195698443, ms/per read: 5.1124576397370724E-5
+entities: 20, concurrent: 5; time: 10545, readCount: 201316994, ms/per read: 5.238007875281508E-5
+entities: 9, concurrent: 9; time: 10569, readCount: 207677245, ms/per read: 5.089146863441876E-5
+
+
+LRUConcurrentHashMap:
+entities: 1, concurrent: 10; time: 10051, readCount: 185588725, ms/per read: 5.415738453854142E-5
+entities: 10, concurrent: 1; time: 10078, readCount: 200893423, ms/per read: 5.0165903141587664E-5
+entities: 3, concurrent: 3; time: 10000, readCount: 190083063, ms/per read: 5.260857986068964E-5
+entities: 1, concurrent: 50; time: 10011, readCount: 184888385, ms/per read: 5.4146181221713843E-5
+entities: 50, concurrent: 1; time: 10498, readCount: 219726510, ms/per read: 4.77775758600999E-5
+entities: 5, concurrent: 10; time: 10043, readCount: 217102022, ms/per read: 4.625935727120957E-5
+entities: 10, concurrent: 5; time: 10003, readCount: 219455918, ms/per read: 4.55809079616618E-5
+entities: 1, concurrent: 100; time: 10005, readCount: 164147699, ms/per read: 6.095120468304585E-5
+entities: 100, concurrent: 1; time: 10026, readCount: 218426815, ms/per read: 4.5900957718950394E-5
+entities: 5, concurrent: 20; time: 10520, readCount: 211305120, ms/per read: 4.978582629706275E-5
+entities: 20, concurrent: 5; time: 10124, readCount: 194345609, ms/per read: 5.209276428776943E-5
+entities: 9, concurrent: 9; time: 10003, readCount: 200297281, ms/per read: 4.9940767793048574E-5
+
+ConcurrentHashMap:
+entities: 1, concurrent: 10; time: 10001, readCount: 215752742, ms/per read: 4.635398793680221E-5
+entities: 10, concurrent: 1; time: 10072, readCount: 219910831, ms/per read: 4.580038170107229E-5
+entities: 3, concurrent: 3; time: 10051, readCount: 215775166, ms/per read: 4.658089337305851E-5
+entities: 1, concurrent: 50; time: 10181, readCount: 228636744, ms/per read: 4.4529150572578135E-5
+entities: 50, concurrent: 1; time: 10003, readCount: 215792706, ms/per read: 4.635467150590345E-5
+entities: 5, concurrent: 10; time: 10003, readCount: 214358409, ms/per read: 4.6664835994374264E-5
+entities: 10, concurrent: 5; time: 10023, readCount: 218191992, ms/per read: 4.593660797597008E-5
+entities: 1, concurrent: 100; time: 10029, readCount: 224223522, ms/per read: 4.4727689185080235E-5
+entities: 100, concurrent: 1; time: 10596, readCount: 232466827, ms/per read: 4.558069698262798E-5
+entities: 5, concurrent: 20; time: 10268, readCount: 219622788, ms/per read: 4.6752889777539844E-5
+entities: 20, concurrent: 5; time: 10685, readCount: 231721814, ms/per read: 4.611132553968355E-5
+entities: 9, concurrent: 9; time: 10004, readCount: 218640136, ms/per read: 4.575555148758232E-5
+
+
+
+AllWriteNoCache
+
+BoundedConcurrentHashMap:
+log4j:WARN No appenders could be found for logger (com.taobao.tddl.common.util.BoundedConcurrentHashMap).
+log4j:WARN Please initialize the log4j system properly.
+entities: 1, concurrent: 10; time: 10266, writeCount: 5039185, ms/per write: 0.0020372341956090122
+entities: 10, concurrent: 1; time: 10001, writeCount: 5173657, ms/per write: 0.0019330620487597071
+entities: 3, concurrent: 3; time: 10015, writeCount: 5234152, ms/per write: 0.0019133949491722823
+entities: 1, concurrent: 50; time: 10043, writeCount: 5145708, ms/per write: 0.0019517236500788619
+entities: 50, concurrent: 1; time: 10003, writeCount: 5186478, ms/per write: 0.0019286691276816368
+entities: 5, concurrent: 10; time: 10066, writeCount: 5193063, ms/per write: 0.0019383550709860442
+entities: 10, concurrent: 5; time: 10003, writeCount: 5146059, ms/per write: 0.0019438175893436124
+entities: 1, concurrent: 100; time: 10038, writeCount: 5226074, ms/per write: 0.0019207535140145357
+entities: 100, concurrent: 1; time: 10052, writeCount: 5224953, ms/per write: 0.0019238450565966813
+entities: 5, concurrent: 20; time: 10059, writeCount: 5199651, ms/per write: 0.0019345529151860385
+entities: 20, concurrent: 5; time: 10048, writeCount: 5199127, ms/per write: 0.001932632151513129
+entities: 9, concurrent: 9; time: 10007, writeCount: 5172107, ms/per write: 0.001934801426188592
+
+ConcurrentHashMap:
+entities: 1, concurrent: 10; time: 10049, writeCount: 88891809, ms/per write: 1.1304753624712486E-4
+entities: 10, concurrent: 1; time: 10001, writeCount: 120875618, ms/per write: 8.27379430647461E-5
+entities: 3, concurrent: 3; time: 10046, writeCount: 113499745, ms/per write: 8.851121207364827E-5
+entities: 1, concurrent: 50; time: 10018, writeCount: 88686114, ms/per write: 1.1296018675482839E-4
+entities: 50, concurrent: 1; time: 10120, writeCount: 141541695, ms/per write: 7.149836661204319E-5
+entities: 5, concurrent: 10; time: 10003, writeCount: 120198257, ms/per write: 8.322084071485329E-5
+entities: 10, concurrent: 5; time: 10068, writeCount: 135455085, ms/per write: 7.432722071674164E-5
+entities: 1, concurrent: 100; time: 10006, writeCount: 88199832, ms/per write: 1.1344692810752746E-4
+entities: 100, concurrent: 1; time: 10144, writeCount: 126180373, ms/per write: 8.039285158873322E-5
+entities: 5, concurrent: 20; time: 10004, writeCount: 115791299, ms/per write: 8.639681985085943E-5
+entities: 20, concurrent: 5; time: 10038, writeCount: 139817513, ms/per write: 7.179358139491438E-5
+entities: 9, concurrent: 9; time: 10036, writeCount: 118151796, ms/per write: 8.49415780357668E-5
+
+LRUConcurrentHashMap:
+entities: 1, concurrent: 10; time: 10052, writeCount: 13545507, ms/per write: 7.420910859962643E-4
+entities: 10, concurrent: 1; time: 10049, writeCount: 15316300, ms/per write: 6.560984049672571E-4
+entities: 3, concurrent: 3; time: 10023, writeCount: 15719558, ms/per write: 6.376133476526502E-4
+entities: 1, concurrent: 50; time: 10036, writeCount: 14917938, ms/per write: 6.727471316746323E-4
+entities: 50, concurrent: 1; time: 10070, writeCount: 15511746, ms/per write: 6.491854624231212E-4
+entities: 5, concurrent: 10; time: 10016, writeCount: 15605162, ms/per write: 6.418388992052758E-4
+entities: 10, concurrent: 5; time: 10124, writeCount: 15488384, ms/per write: 6.536511491450625E-4
+entities: 1, concurrent: 100; time: 10070, writeCount: 14846053, ms/per write: 6.782947629245295E-4
+entities: 100, concurrent: 1; time: 10147, writeCount: 15722032, ms/per write: 6.454000348046614E-4
+entities: 5, concurrent: 20; time: 10064, writeCount: 15651690, ms/per write: 6.429976571220104E-4
+entities: 20, concurrent: 5; time: 10024, writeCount: 15538915, ms/per write: 6.450900851185556E-4
+entities: 9, concurrent: 9; time: 10041, writeCount: 15673722, ms/per write: 6.40626393654296E-4
+
+ConcurrentHashMap:
+entities: 1, concurrent: 10; time: 10065, writeCount: 92705414, ms/per write: 1.0856971093403455E-4
+entities: 10, concurrent: 1; time: 10071, writeCount: 141662306, ms/per write: 7.109160004779253E-5
+entities: 3, concurrent: 3; time: 10000, writeCount: 134305516, ms/per write: 7.445710569326132E-5
+entities: 1, concurrent: 50; time: 10072, writeCount: 93972719, ms/per write: 1.0718004232696512E-4
+entities: 50, concurrent: 1; time: 10074, writeCount: 142179244, ms/per write: 7.085422398222908E-5
+entities: 5, concurrent: 10; time: 10002, writeCount: 134994979, ms/per write: 7.409164454923913E-5
+entities: 10, concurrent: 5; time: 10015, writeCount: 136918022, ms/per write: 7.314595882783057E-5
+entities: 1, concurrent: 100; time: 10170, writeCount: 94206094, ms/per write: 1.0795479961200812E-4
+entities: 100, concurrent: 1; time: 10585, writeCount: 145811661, ms/per write: 7.259364530522699E-5
+entities: 5, concurrent: 20; time: 10029, writeCount: 136362946, ms/per write: 7.35463723407677E-5
+entities: 20, concurrent: 5; time: 10087, writeCount: 139978701, ms/per write: 7.206096304608514E-5
+entities: 9, concurrent: 9; time: 10269, writeCount: 140490143, ms/per write: 7.309409600358937E-5
+
+
+ReadWrite
+
+BoundedConcurrentHashMap:
+entities: 1, reads: 1, writes: 10; time: 10135, accessCount: 94114627, ms/per access: 1.0768783050056608E-4
+entities: 1, reads: 2, writes: 5; time: 10072, accessCount: 92268500, ms/per access: 1.0915968071443667E-4
+entities: 1, reads: 3, writes: 3; time: 10001, accessCount: 93343309, ms/per access: 1.0714211984921169E-4
+entities: 1, reads: 5, writes: 2; time: 10054, accessCount: 93577282, ms/per access: 1.0744060721917527E-4
+entities: 1, reads: 10, writes: 1; time: 10059, accessCount: 94479905, ms/per access: 1.0646708419107746E-4
+entities: 10, reads: 1, writes: 10; time: 10038, accessCount: 92415591, ms/per access: 1.0861803610605055E-4
+entities: 10, reads: 2, writes: 5; time: 10210, accessCount: 94588348, ms/per access: 1.0794141367179814E-4
+entities: 10, reads: 3, writes: 3; time: 10003, accessCount: 92473123, ms/per access: 1.0817197122238426E-4
+entities: 10, reads: 5, writes: 2; time: 10131, accessCount: 96351095, ms/per access: 1.051467033145809E-4
+entities: 10, reads: 10, writes: 1; time: 10073, accessCount: 94763905, ms/per access: 1.062957462548636E-4
+entities: 20, reads: 1, writes: 10; time: 10078, accessCount: 96548843, ms/per access: 1.0438240052239673E-4
+entities: 20, reads: 2, writes: 5; time: 10050, accessCount: 96324404, ms/per access: 1.0433493053328417E-4
+entities: 20, reads: 3, writes: 3; time: 10007, accessCount: 96520759, ms/per access: 1.0367717891650645E-4
+entities: 20, reads: 5, writes: 2; time: 10122, accessCount: 98049584, ms/per access: 1.0323348235725304E-4
+entities: 20, reads: 10, writes: 1; time: 10118, accessCount: 99542317, ms/per access: 1.0164521285957207E-4
+
+ConcurrentHashMap:
+entities: 1, reads: 1, writes: 10; time: 10016, accessCount: 126417399, ms/per access: 7.922960034955315E-5
+entities: 1, reads: 2, writes: 5; time: 10065, accessCount: 139787099, ms/per access: 7.200235266346002E-5
+entities: 1, reads: 3, writes: 3; time: 10102, accessCount: 148183439, ms/per access: 6.817226046427496E-5
+entities: 1, reads: 5, writes: 2; time: 10048, accessCount: 165364871, ms/per access: 6.076260295936735E-5
+entities: 1, reads: 10, writes: 1; time: 10082, accessCount: 186447454, ms/per access: 5.407421653502439E-5
+entities: 10, reads: 1, writes: 10; time: 10114, accessCount: 145955245, ms/per access: 6.92952144337122E-5
+entities: 10, reads: 2, writes: 5; time: 10029, accessCount: 164077868, ms/per access: 6.112341732768005E-5
+entities: 10, reads: 3, writes: 3; time: 10107, accessCount: 168583472, ms/per access: 5.99524964107988E-5
+entities: 10, reads: 5, writes: 2; time: 10036, accessCount: 182771789, ms/per access: 5.491000583246466E-5
+entities: 10, reads: 10, writes: 1; time: 11401, accessCount: 211955923, ms/per access: 5.378948527897472E-5
+entities: 20, reads: 1, writes: 10; time: 11330, accessCount: 173769287, ms/per access: 6.520139545718456E-5
+entities: 20, reads: 2, writes: 5; time: 10587, accessCount: 183305597, ms/per access: 5.7756010581608154E-5
+entities: 20, reads: 3, writes: 3; time: 10853, accessCount: 178157106, ms/per access: 6.091814266448625E-5
+entities: 20, reads: 5, writes: 2; time: 11286, accessCount: 211388669, ms/per access: 5.33898058651384E-5
+entities: 20, reads: 10, writes: 1; time: 11965, accessCount: 225193215, ms/per access: 5.31321514282746E-5
+
+
+LRUConcurrentHashMap:
+entities: 1, reads: 1, writes: 10; time: 10105, accessCount: 63393630, ms/per access: 1.594008735578007E-4
+entities: 1, reads: 2, writes: 5; time: 10087, accessCount: 67746147, ms/per access: 1.4889407658859183E-4
+entities: 1, reads: 3, writes: 3; time: 10056, accessCount: 78272963, ms/per access: 1.284734790418822E-4
+entities: 1, reads: 5, writes: 2; time: 10019, accessCount: 87163000, ms/per access: 1.1494556176359235E-4
+entities: 1, reads: 10, writes: 1; time: 10002, accessCount: 91588773, ms/per access: 1.0920552456795114E-4
+entities: 10, reads: 1, writes: 10; time: 10572, accessCount: 179168227, ms/per access: 5.900599775427816E-5
+entities: 10, reads: 2, writes: 5; time: 10105, accessCount: 193716792, ms/per access: 5.2163779379538766E-5
+entities: 10, reads: 3, writes: 3; time: 10004, accessCount: 185982495, ms/per access: 5.3790008570430246E-5
+entities: 10, reads: 5, writes: 2; time: 10889, accessCount: 214850540, ms/per access: 5.068174369028814E-5
+entities: 10, reads: 10, writes: 1; time: 10014, accessCount: 200441951, ms/per access: 4.9959601520741536E-5
+entities: 20, reads: 1, writes: 10; time: 10077, accessCount: 185082673, ms/per access: 5.444593941000625E-5
+entities: 20, reads: 2, writes: 5; time: 10785, accessCount: 211076550, ms/per access: 5.109520692848163E-5
+entities: 20, reads: 3, writes: 3; time: 10377, accessCount: 202711202, ms/per access: 5.119105356594945E-5
+entities: 20, reads: 5, writes: 2; time: 10819, accessCount: 209790939, ms/per access: 5.157038741315706E-5
+entities: 20, reads: 10, writes: 1; time: 11466, accessCount: 220768719, ms/per access: 5.193670576129039E-5
+
+ConcurrentHashMap:
+entities: 1, reads: 1, writes: 10; time: 10018, accessCount: 131900078, ms/per access: 7.595143347830317E-5
+entities: 1, reads: 2, writes: 5; time: 10040, accessCount: 179502923, ms/per access: 5.5932236824912314E-5
+entities: 1, reads: 3, writes: 3; time: 10050, accessCount: 173379768, ms/per access: 5.796524078864842E-5
+entities: 1, reads: 5, writes: 2; time: 10000, accessCount: 197361939, ms/per access: 5.066833073625204E-5
+entities: 1, reads: 10, writes: 1; time: 10074, accessCount: 213732927, ms/per access: 4.7133589294830555E-5
+entities: 10, reads: 1, writes: 10; time: 10210, accessCount: 172345355, ms/per access: 5.924151504262175E-5
+entities: 10, reads: 2, writes: 5; time: 10144, accessCount: 182240739, ms/per access: 5.5662636442667194E-5
+entities: 10, reads: 3, writes: 3; time: 10023, accessCount: 188748458, ms/per access: 5.310242057712598E-5
+entities: 10, reads: 5, writes: 2; time: 10035, accessCount: 205289403, ms/per access: 4.888221142130751E-5
+entities: 10, reads: 10, writes: 1; time: 11183, accessCount: 238194260, ms/per access: 4.6949074255609684E-5
+entities: 20, reads: 1, writes: 10; time: 10714, accessCount: 180736896, ms/per access: 5.927953969066726E-5
+entities: 20, reads: 2, writes: 5; time: 11515, accessCount: 210152542, ms/per access: 5.479353183365253E-5
+entities: 20, reads: 3, writes: 3; time: 10389, accessCount: 199334751, ms/per access: 5.211835842913311E-5
+entities: 20, reads: 5, writes: 2; time: 11506, accessCount: 236805720, ms/per access: 4.858835335565374E-5
+entities: 20, reads: 10, writes: 1; time: 12961, accessCount: 274899791, ms/per access: 4.71480896833421E-5
+
+
+
+AllWriteAllCache
+
+
+LRUConcurrentHashMap:
+entities: 1, concurrent: 10; time: 10043, writeCount: 45078619, ms/per write: 2.227885463838189E-4
+entities: 10, concurrent: 1; time: 10004, writeCount: 36463436, ms/per write: 2.7435702987507814E-4
+entities: 3, concurrent: 3; time: 10025, writeCount: 45833220, ms/per write: 2.1872781358150267E-4
+entities: 1, concurrent: 50; time: 10016, writeCount: 49537273, ms/per write: 2.021911864223935E-4
+entities: 50, concurrent: 1; time: 10081, writeCount: 47586004, ms/per write: 2.118480047200433E-4
+entities: 5, concurrent: 10; time: 10032, writeCount: 42448421, ms/per write: 2.3633387918009955E-4
+entities: 10, concurrent: 5; time: 10018, writeCount: 38718991, ms/per write: 2.587360812165792E-4
+entities: 1, concurrent: 100; time: 10021, writeCount: 49089033, ms/per write: 2.0413928300441362E-4
+entities: 100, concurrent: 1; time: 10298, writeCount: 40900144, ms/per write: 2.5178395459927967E-4
+entities: 5, concurrent: 20; time: 10025, writeCount: 41931782, ms/per write: 2.3907879708045797E-4
+entities: 20, concurrent: 5; time: 10165, writeCount: 54402912, ms/per write: 1.8684661585762174E-4
+entities: 9, concurrent: 9; time: 10088, writeCount: 39209333, ms/per write: 2.57285682467488E-4
+
+ConcurrentHashMap:
+entities: 1, concurrent: 10; time: 10022, writeCount: 84421070, ms/per write: 1.1871443941660536E-4
+entities: 10, concurrent: 1; time: 10002, writeCount: 84992925, ms/per write: 1.1768038339661801E-4
+entities: 3, concurrent: 3; time: 10001, writeCount: 82653497, ms/per write: 1.209991151372579E-4
+entities: 1, concurrent: 50; time: 10016, writeCount: 84530583, ms/per write: 1.1848965953541335E-4
+entities: 50, concurrent: 1; time: 10003, writeCount: 133241013, ms/per write: 7.507448175885604E-5
+entities: 5, concurrent: 10; time: 10017, writeCount: 83910242, ms/per write: 1.1937756060815555E-4
+entities: 10, concurrent: 5; time: 10034, writeCount: 85476134, ms/per write: 1.173894926038653E-4
+entities: 1, concurrent: 100; time: 10026, writeCount: 84007068, ms/per write: 1.1934710065110236E-4
+entities: 100, concurrent: 1; time: 10104, writeCount: 128583680, ms/per write: 7.85791789440153E-5
+entities: 5, concurrent: 20; time: 10077, writeCount: 85250082, ms/per write: 1.1820516489356573E-4
+entities: 20, concurrent: 5; time: 10077, writeCount: 130144453, ms/per write: 7.742934691192717E-5
+entities: 9, concurrent: 9; time: 10062, writeCount: 85165904, ms/per write: 1.1814587208514806E-4
+

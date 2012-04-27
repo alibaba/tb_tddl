@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+    <local-tx-datasource>
+        <jndi-name>DBCDataSource_cm2</jndi-name>
+        <connection-url>jdbc:oracle:oci:@dev-dbcommon</connection-url>
+        <connection-property name="SetBigStringTryClob">true</connection-property>
+        <connection-property name="defaultRowPrefetch">50</connection-property>
+        <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+
+        <min-pool-size>2</min-pool-size>
+        <max-pool-size>10</max-pool-size>
+        <prepared-statement-cache-size>100</prepared-statement-cache-size>
+        <metadata>
+            <type-mapping>Oracle9i</type-mapping>
+        </metadata>
+
+        <user-name>taobao</user-name>
+        <password>taobao</password>
+    </local-tx-datasource>
+    <local-tx-datasource>
+        <jndi-name>DBCDataSource_cm3</jndi-name>
+        <connection-url>jdbc:oracle:oci:@test</connection-url>
+        <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+
+        <min-pool-size>2</min-pool-size>
+        <max-pool-size>10</max-pool-size>
+        <prepared-statement-cache-size>100</prepared-statement-cache-size>
+
+        <security-domain>EncryptDBCPassword</security-domain>
+    </local-tx-datasource>
+</datasources>
